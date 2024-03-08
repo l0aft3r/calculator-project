@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(16, 18, 19);
+}
+
+#container {
+    background-color: rgb(16, 18, 19);
+    margin: auto;
+    width: 100%;
+    max-width: 700px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 1000px;
+    border-radius: 25px;
+    border-collapse: separate;
+    border-radius: 3%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#display {
+    background-color: rgb(30, 35, 37);
+    color: aliceblue;
+    font-size: 15vmin;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#display-text {
+    text-align: right;
+    height: auto;
+}
+
+#btns {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1vmin;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    gap: 1%;
+}
+
+.btn {
+    background-color: rebeccapurple;
+    color: white;
+    flex: 1 0 18%;
+    height: 20%;
+    text-align: center;
+    padding: 0% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number {
+    background-color: rgb(33, 39, 41);
+}
+
+.number2 {
+    background-color: rgb(33, 39, 41);
+    color: rebeccapurple;
+}
+
+#equals {
+    flex-basis: 38.1%;
+}
