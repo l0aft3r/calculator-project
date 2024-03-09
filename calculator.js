@@ -2,6 +2,8 @@ let num1 = null;
 let num2 = 0;
 let operator = null;
 
+const inputList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", "+", "-", "=", "*", "/", "%", "c", "C"]
+
 const btns = Array.from(document.querySelectorAll(".btn"));
 const display = document.querySelector("#display-text");
 
@@ -62,7 +64,7 @@ function updateDisplay(input) {
         display.textContent += input;
         num2 = display.textContent;
     } else {
-        if (!(input === 'c') && !(input === 'equals') && !(input === '.') && !(input === '←') && !(input === '%')) {
+        if (!(input === 'c') && !(input === 'C') && !(input === 'equals') && !(input === '.') && !(input === '←') && !(input === '%')) {
             if (num1 === null || operator === null) {
                 num1 = display.textContent;
                 operator = input;
@@ -74,7 +76,7 @@ function updateDisplay(input) {
                 operator = input;
                 setDisplayText(num1);
             }
-        } else if (input === 'c') {
+        } else if (input === 'c' || input === 'C') {
             setDisplayText('0');
             num1 = null;
             num2 = null;
@@ -120,3 +122,11 @@ for (const element of btns) {
         updateDisplay(e.target.id);
     })
 }
+
+document.addEventListener("keydown", (e) => {
+    if (inputList.some(el => e.key.includes(el))) {
+        updateDisplay(e.key);
+    } else if (e.code === "Backspace") {
+        updateDisplay("←");
+    }
+})
